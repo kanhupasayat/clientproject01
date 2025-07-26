@@ -6,7 +6,9 @@ SECRET_KEY = 'django-insecure-81pn+x&_bj!)=d$=ko!h-xvjklfzeyji^&=a8wni8%__0@r0i*
 
 DEBUG = True  # Set to False in production
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['clientproject01.onrender.com']
+
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -87,7 +89,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # For local development
     "https://yourfrontend.netlify.app",  # Optional: replace with your deployed frontend
+    "https://clientproject01.onrender.com"
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://clientproject01.onrender.com"
+]
+
 
 CORS_ALLOW_HEADERS = [
     'authorization',

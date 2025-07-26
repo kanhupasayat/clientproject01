@@ -1,4 +1,5 @@
 from pathlib import Path
+from corsheaders.defaults import default_headers
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -48,6 +49,9 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
+
+
+
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
@@ -85,11 +89,15 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+
+CORS_ALLOW_ALL_ORIGINS = False
+
 # CORS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # For local development
     "https://yourfrontend.netlify.app",  # Optional: replace with your deployed frontend
-    "https://clientproject01.onrender.com"
+    "https://clientproject01.onrender.com",
+    "https://vansuraksha.netlify.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -103,6 +111,9 @@ CORS_ALLOW_HEADERS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_HEADERS = list(default_headers)
+
 
 # REST Framework
 REST_FRAMEWORK = {

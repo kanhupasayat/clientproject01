@@ -6,10 +6,7 @@ SECRET_KEY = 'django-insecure-81pn+x&_bj!)=d$=ko!h-xvjklfzeyji^&=a8wni8%__0@r0i*
 
 DEBUG = False  # Set to False in production
 
-ALLOWED_HOSTS = [
-    'yourusername.pythonanywhere.com',  # ✅ Replace with your actual PythonAnywhere domain
-    '127.0.0.1',  # Optional: for local testing
-]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
